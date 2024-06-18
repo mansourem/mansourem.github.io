@@ -1,0 +1,249 @@
+/* Overall */
+/* -------------------------------  */
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #212121;
+  color: white;
+  height: 100%;
+}
+
+.current
+{
+  color: #00d0ec;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.larger-size {
+  font-size: 300%;
+  padding: 5rem;
+}
+
+.title {
+  padding: 2rem;
+}
+
+.spacer {
+  height: 500px;
+  width: 100%;
+  background-attachment: fixed;
+  background-image: url(images/detailed_board.png);
+  opacity: 50%;
+}
+
+/* -------------------------------  */
+/* Header & Nav Bar */
+/* -------------------------------  */
+
+header {
+  color: white;
+  padding: 2rem;
+}
+
+header h2 {
+  float: left;
+  font-size: 125%;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; 
+  float: right;
+}
+
+nav a {
+	color: #e6db74;
+	font-weight: bold;
+  text-decoration: none;
+  padding: 1rem 2rem;
+}
+
+nav a:hover {
+	color: white;
+}
+
+/* -------------------------------  */
+/* Index */
+/* -------------------------------  */
+
+h1 {
+  font-size: 200%;
+  text-align: center;
+  color: white;
+  padding-top: 5rem;
+}
+
+/* -------------------------------  */
+/* Typewritting function */
+/* -------------------------------  */
+
+.typewriter {
+  font-size: 500%;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  padding: 2rem;
+}
+
+.typewrite {
+  color: #e6db74;
+  text-decoration: none;
+}
+
+/* -------------------------------  */
+/* Footer */
+/* -------------------------------  */
+
+footer {
+  position: static;
+  /* margin-top: auto; */
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  /* width: 100%; */
+  text-align: center;
+  vertical-align: middle;
+  justify-content: space-around;
+  padding: 2rem;
+  
+}
+
+footer ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; 
+  float: right;
+  text-decoration: none;
+  padding: 1rem 2rem;
+}
+
+footer a {
+  padding: 1rem 2rem;
+  color: #9291ef;
+}
+
+footer a:hover {
+   color: #00d0ec;
+} 
+
+/* -------------------------------  */
+/*  */
+/* -------------------------------  */
+
+
+.contact-icons {
+  size: 200%;
+  align-items: center;
+}
+
+
+/* -------------------------------  */
+/* Resume */
+/* -------------------------------  */
+
+table-body {
+  padding: 2rem;
+  text-align: center;
+}
+
+table {
+  width: 95%;
+  margin: 20px auto;
+  table-layout: auto;
+  padding: 5rem;
+  vertical-align: middle;
+}
+
+table,
+td,
+th {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+td h2 {
+  float: right;
+  font-size: 200%;
+  font-weight: bold;
+}
+
+td h3 {
+  float: left;
+  font-weight: normal;
+  font-size: 125%;
+  text-transform: uppercase;
+  padding-left: 2rem;
+
+}
+
+td p {
+  text-align: left;
+  color: #e6db74;
+  text-decoration: none;
+  padding-left: 2rem;
+}
+
+.time {
+  width: 10%;
+  text-align: right;
+}
+
+.company {
+  color: #9a99ff;
+  text-decoration: none;
+}
+
+.description {
+  width: 50%;
+}
+
+
+/* -------------------------------  */
+/* About */
+/* -------------------------------  */
+
+.bio p {
+  padding: 0rem 10rem 2rem 10rem;
+  font-size: 150%;
+  text-align: center;
+}
+
+/* -------------------------------  */
+/* Contact */
+/* -------------------------------  */
+
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-evenly;
+  /* width: 70%; */
+  align-items: center;
+  padding: 5rem;
+  text-align: center;
+}
+
+.contact h2 {
+  text-transform: uppercase;
+  color: #9a99ff;
+  font-size: 150%;
+  padding: 2rem;
+}
+
+.contact p {
+  color: #e6db74;
+  font-size: 175%;
+}
