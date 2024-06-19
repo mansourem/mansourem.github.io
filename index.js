@@ -69,20 +69,73 @@ $(window).scroll(function() {
 });
 
 
-// When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
+/* -------------------------------  */
+/* Contact */
+/* -------------------------------  */
+$(function() {
 
-// Get the header
-var header = document.getElementById("myHeader");
+	'use strict';
 
-// Get the offset position of the navbar
-var sticky = header.offsetTop;
+	var contactForm = function() {
 
-// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
+		if ($('#contactForm').length > 0 ) {
+			$( "#contactForm" ).validate( {
+				rules: {
+					name: "required",
+					email: {
+						required: true,
+						email: true
+					},
+					message: {
+						required: true,
+						minlength: 5
+					}
+				},
+				messages: {
+					name: "Please enter your name",
+					email: "Please enter a valid email address",
+					message: "Please enter a message"
+				},
+				/* submit via ajax */
+				submitHandler: function(form) {		
+					var $submit = $('.submitting'),
+						waitText = 'Submitting...';
+
+					$.ajax({   	
+				      type: "POST",
+				      url: "php/send-email.php",
+				      data: $(form).serialize(),
+
+				      beforeSend: function() { 
+				      	$submit.css('display', 'block').text(waitText);
+				      },
+				      success: function(msg) {
+		               if (msg == 'OK') {
+		               	$('#form-message-warning').hide();
+				            setTimeout(function(){
+		               		$('#contactForm').fadeOut();
+		               	}, 1000);
+				            setTimeout(function(){
+				               $('#form-message-success').fadeIn();   
+		               	}, 60);
+			               
+			            } else {
+			               $('#form-message-warning').html(msg);
+				            $('#form-message-warning').fadeIn();
+				            $submit.css('display', 'none');
+			            }
+				      },
+				      error: function() {
+				      	$('#form-message-warning').html("Something went wrong. Please try again.");
+				         $('#form-message-warning').fadeIn();
+				         $submit.css('display', 'none');
+				      }
+			      });    		
+		  		}
+				
+			} );
+		}
+	};
+	contactForm();
+
+});

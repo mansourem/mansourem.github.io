@@ -1,3 +1,4 @@
+/* -------------------------------  */
 /* Overall */
 /* -------------------------------  */
 
@@ -5,7 +6,6 @@ body {
   font-family: 'Courier New', Courier, monospace;
   background-color: #212121;
   color: white;
-  height: 100%;
 }
 
 .current
@@ -38,6 +38,19 @@ body {
   opacity: 50%;
 }
 
+h1 {
+  font-size: 200%;
+  text-align: center;
+  color: white;
+  padding-top: 5rem;
+}
+
+.thanks {
+  text-align: center; 
+  line-height: 2;
+  font-size: 150%;
+  padding: 5rem;
+}
 /* -------------------------------  */
 /* Header & Nav Bar */
 /* -------------------------------  */
@@ -71,17 +84,6 @@ nav a:hover {
 }
 
 /* -------------------------------  */
-/* Index */
-/* -------------------------------  */
-
-h1 {
-  font-size: 200%;
-  text-align: center;
-  color: white;
-  padding-top: 5rem;
-}
-
-/* -------------------------------  */
 /* Typewritting function */
 /* -------------------------------  */
 
@@ -104,16 +106,13 @@ h1 {
 
 footer {
   position: static;
-  /* margin-top: auto; */
   bottom: 0;
   left: 0;
   z-index: 10;
-  /* width: 100%; */
   text-align: center;
   vertical-align: middle;
   justify-content: space-around;
   padding: 2rem;
-  
 }
 
 footer ul {
@@ -133,17 +132,6 @@ footer a {
 footer a:hover {
    color: #00d0ec;
 } 
-
-/* -------------------------------  */
-/*  */
-/* -------------------------------  */
-
-
-.contact-icons {
-  size: 200%;
-  align-items: center;
-}
-
 
 /* -------------------------------  */
 /* Resume */
@@ -171,7 +159,7 @@ th {
 th,
 td {
   padding: 10px;
-  text-align: center;
+  text-align: right;
   vertical-align: middle;
 }
 
@@ -183,11 +171,11 @@ td h2 {
 
 td h3 {
   float: left;
+  text-align: right;
   font-weight: normal;
   font-size: 125%;
   text-transform: uppercase;
   padding-left: 2rem;
-
 }
 
 td p {
@@ -198,19 +186,85 @@ td p {
 }
 
 .time {
-  width: 10%;
+  width: 15%;
   text-align: right;
 }
 
 .company {
   color: #9a99ff;
   text-decoration: none;
+  text-align: right;
 }
 
 .description {
   width: 50%;
 }
 
+/* download */
+.button {
+  --main-focus: #2d8cf0;
+  --font-color: #dedede;
+  --bg-color-sub: #222;
+  --bg-color: #323232;
+  --main-color: #dedede;
+  position: relative;
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  float: right;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-right: 2rem;
+}
+
+.button, .button__icon, .button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  transform: translateX(21px);
+  color: var(--font-color);
+  font-weight: 600;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(150px);
+  height: 100%;
+  width: 39px;
+  background-color: var(--bg-color-sub);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button .svg {
+  width: 20px;
+  fill: var(--main-color);
+}
+
+.button:hover {
+  background: var(--bg-color);
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 200px;
+  transform: translateX(0);
+}
+
+.button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px var(--main-color);
+}
 
 /* -------------------------------  */
 /* About */
@@ -220,6 +274,7 @@ td p {
   padding: 0rem 10rem 2rem 10rem;
   font-size: 150%;
   text-align: center;
+  color: #e6db74;
 }
 
 /* -------------------------------  */
@@ -230,9 +285,8 @@ td p {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-evenly;
-  /* width: 70%; */
   align-items: center;
-  padding: 5rem;
+  /* padding: 5rem; */
   text-align: center;
 }
 
@@ -246,4 +300,139 @@ td p {
 .contact p {
   color: #e6db74;
   font-size: 175%;
+}
+
+.contact-icons {
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.contact-icons ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; 
+  float: right;
+  text-decoration: none;
+  padding: 1rem 2rem;
+}
+
+.contact-icons a {
+  padding: 1rem 2rem;
+  color: #9291ef;
+  font-size: 200%;
+}
+
+.contact-icons a:hover {
+   color: #00d0ec;
+}
+
+/* -------------------------------  */
+/* Contact Form */
+/* -------------------------------  */
+
+.contact-form .form-row {
+  color: #6c6c6c;
+  margin-bottom: 30px;
+  border: none;
+  outline: none;
+  background: transparent;
+  display: flex;
+  justify-content: space-around;
+}
+
+input, textarea {
+  background-color: #212121;
+  padding: 1rem;
+  font-size: 150%;
+  border: none;
+  border-bottom: 1px solid #6c6c6c;
+  width: 80%;
+  color: white;
+}
+
+/* button */
+.ui-btn {
+  --btn-default-bg: #6c6c6c;
+  --btn-padding: 15px 20px;
+  --btn-hover-bg: rgb(51, 51, 51);
+  --btn-transition: .3s;
+  --btn-letter-spacing: .1rem;
+  --btn-animation-duration: 1.2s;
+  --btn-shadow-color: rgba(0, 0, 0, 0.137);
+  --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
+  --hover-btn-color: #e6db74;
+  --default-btn-color: #fff;
+  --font-size: 150%;  
+  --font-weight: 600;
+  --font-family: monospace;
+}
+
+.ui-btn {
+  box-sizing: border-box;
+  width: 80%;
+  padding: var(--btn-padding);
+  display: flex;
+  justify-content: space-around;
+  color: var(--default-btn-color);
+  font: var(--font-weight) var(--font-size) var(--font-family);
+  background: var(--btn-default-bg);
+  border: none;
+  cursor: pointer;
+  transition: var(--btn-transition);
+  overflow: hidden;
+  box-shadow: var(--btn-shadow);
+}
+
+.ui-btn span {
+  letter-spacing: var(--btn-letter-spacing);
+  transition: var(--btn-transition);
+  box-sizing: border-box;
+  position: relative;
+  background: inherit;
+}
+
+.ui-btn span::before {
+  box-sizing: border-box;
+  position: absolute;
+  content: "";
+  background: inherit;
+}
+
+.ui-btn:hover, .ui-btn:focus {
+  background: var(--btn-hover-bg);
+}
+
+.ui-btn:hover span, .ui-btn:focus span {
+  color: var(--hover-btn-color);
+}
+
+.ui-btn:hover span::before, .ui-btn:focus span::before {
+  animation: chitchat linear both var(--btn-animation-duration);
+}
+
+@keyframes chitchat {
+  0% { content: "#"; }
+  5% { content: "."; }
+  10% { content: "^{"; }
+  15% { content: "-!"; }
+  20% { content: "#$_"; }
+  25% { content: "№:0"; }
+  30% { content: "#{+."; }
+  35% { content: "@}-?"; }
+  40% { content: "?{4@%"; }
+  45% { content: "=.,^!"; }
+  50% { content: "?2@%"; }
+  55% { content: "\;1}]"; }
+  60% { content: "?{%:%"; right: 0; }
+  65% { content: "|{f[4"; right: 0; }
+  70% { content: "{4%0%"; right: 0; }
+  75% { content: "'1_0<"; right: 0; }
+  80% { content: "{0%"; right: 0; }
+  85% { content: "]>'"; right: 0; }
+  90% { content: "4"; right: 0; }
+  95% { content: "2"; right: 0; }
+  100% { content: ""; right: 0; }
 }
