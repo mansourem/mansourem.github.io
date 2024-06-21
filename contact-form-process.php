@@ -69,4 +69,5 @@ if (isset($_POST['Email'])) {
     @mail($email_to, $subject, $email_message, $headers);
     header("Location: contact_thanks.html")
     // Thank you for contacting us. We will be in touch with you very soon.
+}
 ?>
