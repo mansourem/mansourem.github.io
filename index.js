@@ -58,10 +58,6 @@ window.onload = function() {
 var tlBtn = document.querySelector('.tl'),
     tbl = document.getElementById('t');
 
-tlBtn.addEventListener('click', function() {
-  tbl.classList.toggle('fixed');
-}, false);
-
 var bg = $('#bg');
 $(window).scroll(function() {
   var x = $(this).scrollTop();
